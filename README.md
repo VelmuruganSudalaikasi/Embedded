@@ -2,8 +2,11 @@
 Embedded repostitory contains the Embedded Basic and communication protocols.
 
 Platform Details:
+
 MICRO-PROCESSOR : PIC
+
 DESIGN          : PROTEUS
+
 IDE             : MP LAB
 
 Note: Each task have separate directory.
