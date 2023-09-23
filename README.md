@@ -1,5 +1,5 @@
 # Embedded
-Embedded repostitory contains the Embedded Basic and communication protocols.
+Embedded repository contains the Embedded Basic and communication protocols.
 
 Platform Details:
 
