@@ -1,0 +1,2 @@
+build/default/debug/RC6ANDRC1LEDBLINK.p1:  \
+RC6ANDRC1LEDBLINK.c 
