@@ -1,0 +1,53 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"28 E:\EMBEDDED\LEDBLINK\Pwm_2khz.X\pwm_2hrz.c
+[v _main main `(v  1 e 1 0 ]
+"38
+[v _configuration configuration `(v  1 e 1 0 ]
+"57
+[v _pwm_change pwm_change `(v  1 e 1 0 ]
+"278 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"737
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"1080
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1094
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1816
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"24 E:\EMBEDDED\LEDBLINK\Pwm_2khz.X\pwm_2hrz.c
+[v _pwmh20 pwmh20 `uc  1 e 1 0 ]
+[v _pwml20 pwml20 `uc  1 e 1 0 ]
+[v _pwmh40 pwmh40 `uc  1 e 1 0 ]
+[v _pwml40 pwml40 `uc  1 e 1 0 ]
+[v _pwmh90 pwmh90 `uc  1 e 1 0 ]
+[v _pwml90 pwml90 `uc  1 e 1 0 ]
+"28
+[v _main main `(v  1 e 1 0 ]
+{
+"37
+} 0
+"57
+[v _pwm_change pwm_change `(v  1 e 1 0 ]
+{
+"73
+} 0
+"38
+[v _configuration configuration `(v  1 e 1 0 ]
+{
+"55
+} 0
