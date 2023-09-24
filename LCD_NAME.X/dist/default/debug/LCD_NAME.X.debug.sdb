@@ -1,0 +1,59 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"27 E:\EMBEDDED\LEDBLINK\LCD\LCD_NAME.X\LCD_DISLPAY.c
+[v _main main `(v  1 e 1 0 ]
+"40
+[v _initi initi `(v  1 e 1 0 ]
+"55
+[v _Lcd_command Lcd_command `(v  1 e 1 0 ]
+"63
+[v _Lcd_data Lcd_data `(v  1 e 1 0 ]
+"278 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"340
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1437
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"24 E:\EMBEDDED\LEDBLINK\LCD\LCD_NAME.X\LCD_DISLPAY.c
+[v _name name `[50]uc  1 e 50 0 ]
+"26
+[v _k k `i  1 e 2 0 ]
+"27
+[v _main main `(v  1 e 1 0 ]
+{
+"39
+} 0
+"40
+[v _initi initi `(v  1 e 1 0 ]
+{
+"54
+} 0
+"55
+[v _Lcd_command Lcd_command `(v  1 e 1 0 ]
+{
+[v Lcd_command@i i `uc  1 a 1 wreg ]
+[v Lcd_command@i i `uc  1 a 1 wreg ]
+[v Lcd_command@i i `uc  1 a 1 3 ]
+"62
+} 0
+"63
+[v _Lcd_data Lcd_data `(v  1 e 1 0 ]
+{
+[v Lcd_data@i i `uc  1 a 1 wreg ]
+[v Lcd_data@i i `uc  1 a 1 wreg ]
+[v Lcd_data@i i `uc  1 a 1 3 ]
+"70
+} 0
