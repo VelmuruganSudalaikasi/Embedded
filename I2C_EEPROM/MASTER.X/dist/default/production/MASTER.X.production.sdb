@@ -3,36 +3,6 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"68 E:\EMBEDDED\LEDBLINK\MASTER.X/I2C.h
-[v _I2C_Page_Write I2C_Page_Write `(v  1 e 1 0 ]
-"93
-[v _I2C_Page_Read I2C_Page_Read `(v  1 e 1 0 ]
-"127
-[v _I2C_Wait I2C_Wait `(v  1 e 1 0 ]
-"136
-[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
-"146
-[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
-"156
-[v _I2C_Repeat_Start I2C_Repeat_Start `(v  1 e 1 0 ]
-"166
-[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
-"188
-[v _I2C_ACK I2C_ACK `(v  1 e 1 0 ]
-"201
-[v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
-"214
-[v _I2C_Write_Data I2C_Write_Data `(i  1 e 2 0 ]
-"227
-[v _I2C_Read_Data I2C_Read_Data `(uc  1 e 1 0 ]
-"43 E:\EMBEDDED\LEDBLINK\MASTER.X/LCD.h
-[v _Lcd_Print Lcd_Print `(v  1 e 1 0 ]
-"52
-[v _Lcd_Configuration Lcd_Configuration `(v  1 e 1 0 ]
-"84
-[v _Lcd_Data Lcd_Data `(v  1 e 1 0 ]
-"101
-[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c90\common\Umul8_16.c
@@ -41,10 +11,38 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"10 E:\EMBEDDED\LEDBLINK\MASTER.X\I2C.c
+[v _I2C_Wait I2C_Wait `(v  1 e 1 0 ]
+"19
+[v _I2C_Start I2C_Start `(v  1 e 1 0 ]
+"29
+[v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
+"39
+[v _I2C_Repeat_Start I2C_Repeat_Start `(v  1 e 1 0 ]
+"49
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"71
+[v _I2C_ACK I2C_ACK `(v  1 e 1 0 ]
+"84
+[v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
+"97
+[v _I2C_Write_Data I2C_Write_Data `(i  1 e 2 0 ]
+"110
+[v _I2C_Read_Data I2C_Read_Data `(uc  1 e 1 0 ]
+"129
+[v _I2C_Page_Write I2C_Page_Write `(v  1 e 1 0 ]
+"155
+[v _I2C_Page_Read I2C_Page_Read `(v  1 e 1 0 ]
 "25 E:\EMBEDDED\LEDBLINK\MASTER.X\I2C_MASTER.c
 [v _main main `(v  1 e 1 0 ]
-"63 E:\EMBEDDED\LEDBLINK\MASTER.X/I2C.h
-[v _buff buff `uc  1 e 1 0 ]
+"7 E:\EMBEDDED\LEDBLINK\MASTER.X\LCD.c
+[v _Lcd_Data Lcd_Data `(v  1 e 1 0 ]
+"26
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"42
+[v _Lcd_Print Lcd_Print `(v  1 e 1 0 ]
+"52
+[v _Lcd_Configuration Lcd_Configuration `(v  1 e 1 0 ]
 "278 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "340
@@ -89,6 +87,8 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "2975
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"6 E:\EMBEDDED\LEDBLINK\MASTER.X\I2C.c
+[v _buff buff `uc  1 e 1 0 ]
 "17 E:\EMBEDDED\LEDBLINK\MASTER.X\I2C_MASTER.c
 [v _Read Read `[6]uc  1 e 6 0 ]
 "19
@@ -100,110 +100,114 @@
 "25
 [v _main main `(v  1 e 1 0 ]
 {
-"73
+"80
 } 0
-"43 E:\EMBEDDED\LEDBLINK\MASTER.X/LCD.h
+"42 E:\EMBEDDED\LEDBLINK\MASTER.X\LCD.c
 [v _Lcd_Print Lcd_Print `(v  1 e 1 0 ]
 {
 [v Lcd_Print@x x `*.4uc  1 a 1 wreg ]
 [v Lcd_Print@x x `*.4uc  1 a 1 wreg ]
 [v Lcd_Print@x x `*.4uc  1 a 1 3 ]
-"49
+"48
 } 0
-"84
+"7
 [v _Lcd_Data Lcd_Data `(v  1 e 1 0 ]
 {
 [v Lcd_Data@data data `uc  1 a 1 wreg ]
 [v Lcd_Data@data data `uc  1 a 1 wreg ]
-"88
+"11
 [v Lcd_Data@data data `uc  1 a 1 2 ]
-"99
+"22
 } 0
 "52
 [v _Lcd_Configuration Lcd_Configuration `(v  1 e 1 0 ]
 {
 "82
 } 0
-"101
+"26
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
 {
 [v Lcd_Cmd@cmd cmd `uc  1 a 1 wreg ]
 [v Lcd_Cmd@cmd cmd `uc  1 a 1 wreg ]
-"103
+"28
 [v Lcd_Cmd@cmd cmd `uc  1 a 1 2 ]
-"114
+"39
 } 0
-"146 E:\EMBEDDED\LEDBLINK\MASTER.X/I2C.h
+"29 E:\EMBEDDED\LEDBLINK\MASTER.X\I2C.c
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
 {
-"152
+"35
 } 0
-"136
+"19
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
 {
-"142
+"25
 } 0
-"68
+"129
 [v _I2C_Page_Write I2C_Page_Write `(v  1 e 1 0 ]
 {
 [v I2C_Page_Write@data data `*.4uc  1 a 1 wreg ]
 [v I2C_Page_Write@data data `*.4uc  1 a 1 wreg ]
 [v I2C_Page_Write@Device_add Device_add `uc  1 p 1 5 ]
+"130
 [v I2C_Page_Write@Reg_add Reg_add `uc  1 p 1 6 ]
+"129
 [v I2C_Page_Write@data data `*.4uc  1 a 1 9 ]
-"89
+"151
 } 0
-"93
+"155
 [v _I2C_Page_Read I2C_Page_Read `(v  1 e 1 0 ]
 {
 [v I2C_Page_Read@result result `*.4uc  1 a 1 wreg ]
-"112
+"174
 [v I2C_Page_Read@i i `i  1 a 2 12 ]
-"93
+"155
 [v I2C_Page_Read@result result `*.4uc  1 a 1 wreg ]
 [v I2C_Page_Read@Size Size `i  1 p 2 5 ]
+"156
 [v I2C_Page_Read@Device_add Device_add `uc  1 p 1 7 ]
 [v I2C_Page_Read@Reg_add Reg_add `uc  1 p 1 8 ]
+"155
 [v I2C_Page_Read@result result `*.4uc  1 a 1 11 ]
-"121
+"183
 } 0
-"214
+"97
 [v _I2C_Write_Data I2C_Write_Data `(i  1 e 2 0 ]
 {
 [v I2C_Write_Data@data data `uc  1 a 1 wreg ]
 [v I2C_Write_Data@data data `uc  1 a 1 wreg ]
-"216
+"99
 [v I2C_Write_Data@data data `uc  1 a 1 4 ]
-"223
+"106
 } 0
-"156
+"39
 [v _I2C_Repeat_Start I2C_Repeat_Start `(v  1 e 1 0 ]
 {
-"162
+"45
 } 0
-"227
+"110
 [v _I2C_Read_Data I2C_Read_Data `(uc  1 e 1 0 ]
 {
 [v I2C_Read_Data@flag flag `i  1 p 2 0 ]
-"244
+"127
 } 0
-"201
+"84
 [v _I2C_NACK I2C_NACK `(v  1 e 1 0 ]
 {
-"210
+"93
 } 0
-"188
+"71
 [v _I2C_ACK I2C_ACK `(v  1 e 1 0 ]
 {
-"196
+"79
 } 0
-"127
+"10
 [v _I2C_Wait I2C_Wait `(v  1 e 1 0 ]
 {
-"131
+"14
 } 0
-"166
+"49
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
 {
-"182
+"65
 } 0

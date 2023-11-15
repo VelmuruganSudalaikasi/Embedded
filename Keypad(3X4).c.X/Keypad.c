@@ -32,13 +32,15 @@ void Configuration(void);       //initial port configuration
 
 void Keypad_Scanning(void);     //Scanning the input from the user
 
+void Standard_Scanning(void);
+
 unsigned char result[] = ":PRESSED";    //Displaying the string
 
-unsigned char temp;                 //Variable for tracking the user pressed position
+unsigned char temp;            //Variable for tracking the user pressed position
 
 void main(void) {
     
-    Lcd_Configuration();
+    Lcd_Configuration();    //Configuring the LCD
     
     Configuration();
     
@@ -84,7 +86,8 @@ void Configuration(void) {
     
     __delay_ms(10);
     
-    for (char i = 0; i < 9; i++) {  //Iterate the Character by Character and sending to the LCD
+    for (char i = 0; i < 9; i++) {  //Iterate the Character by 
+                                    //Character and sending to the LCD
         
         Lcd_Data(result[i]);
     
@@ -95,13 +98,15 @@ void Configuration(void) {
 
 void Keypad_Scanning(void) {    //Keypad_Scanning is polling method
 
-    RB2 = 1, RB0 =RB1 = 0;      //Setting the col 1 bit and reading the value from the user action from row 1
+    RB2 = 1, RB0 =RB1 = 0;      //Setting the col 1 bit and
+                    //reading the value from the user action from row 1
+    
     
     Lcd_Cmd(0x80);
   
     temp = PORTB;
     
-    switch (temp & 0XF0) {      //Printing the respective character to the display
+    switch (temp & 0XF0) {    //Printing the respective character to the display
     
         case 0X10:
             Lcd_Data('1');
@@ -121,7 +126,7 @@ void Keypad_Scanning(void) {    //Keypad_Scanning is polling method
 
     }
     
-    RB1 = 1, RB0 = RB2 = 0;     //setting the col2 as 1 and reading from the row2
+    RB1 = 1, RB0 = RB2 = 0;   //setting the col2 as 1 and reading from the row2
     
     temp = PORTB;
     
@@ -146,7 +151,8 @@ void Keypad_Scanning(void) {    //Keypad_Scanning is polling method
             break;
  }
     
-    RB0 = 1, RB2 = RB1 = 0;     //Setting the col 3 as 1 and reading the input from the row 3
+    RB0 = 1, RB2 = RB1 = 0; //Setting the col 3 as 1 and reading the 
+                                //input from the row 3
     
     temp = PORTB;
     

@@ -1,33 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"39 ./LCD.h
-[; ;./LCD.h: 39: void Lcd_Configuration(void);
-[v _Lcd_Configuration `(v ~T0 @X0 0 ef ]
-"37
-[; ;./LCD.h: 37: void Lcd_Cmd(unsigned char);
-[v _Lcd_Cmd `(v ~T0 @X0 0 ef1`uc ]
-"41
-[; ;./LCD.h: 41: void Lcd_Print(unsigned char*);
-[v _Lcd_Print `(v ~T0 @X0 0 ef1`*uc ]
-"91 ./I2C.h
-[; ;./I2C.h: 91: void I2C_Master_Init(void);
-[v _I2C_Master_Init `(v ~T0 @X0 0 ef ]
-"75
-[; ;./I2C.h: 75: void I2C_Start(void);
-[v _I2C_Start `(v ~T0 @X0 0 ef ]
-"97
-[; ;./I2C.h: 97:  void I2C_Page_Write(unsigned char *,unsigned char ,unsigned char );
-[v _I2C_Page_Write `(v ~T0 @X0 0 ef3`*uc`uc`uc ]
-"79
-[; ;./I2C.h: 79: void I2C_Stop(void);
-[v _I2C_Stop `(v ~T0 @X0 0 ef ]
+"1499 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1499: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"340
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 340: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1437
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 1437: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"278
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 278: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 [v F36 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
-"95 ./I2C.h
-[; ;./I2C.h: 95: void I2C_Page_Read(unsigned char*,int,unsigned char ,unsigned char );
-[v _I2C_Page_Read `(v ~T0 @X0 0 ef4`*uc`i`uc`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -208,128 +195,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2363
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"39 ./Config.h
-[p x FOSC  =  EXTRC      ]
-"40
-[p x WDTE  =  OFF        ]
-"41
-[p x PWRTE  =  OFF       ]
-"42
-[p x BOREN  =  OFF       ]
-"43
-[p x LVP  =  OFF         ]
-"44
-[p x CPD  =  OFF         ]
-"45
-[p x WRT  =  OFF         ]
-"46
-[p x CP  =  OFF          ]
-"17 I2C_MASTER.c
-[; ;I2C_MASTER.c: 17: unsigned char Read[]="READ:";
-[v _Read `uc ~T0 @X0 -> 6 `i e ]
-[i _Read
-:U ..
--> 82 `c
--> 69 `c
--> 65 `c
--> 68 `c
--> 58 `c
--> 0 `c
-..
-]
-"19
-[; ;I2C_MASTER.c: 19: unsigned char Write[]="Write:";
-[v _Write `uc ~T0 @X0 -> 7 `i e ]
-[i _Write
-:U ..
--> 87 `c
--> 114 `c
--> 105 `c
--> 116 `c
--> 101 `c
--> 58 `c
--> 0 `c
-..
-]
-"21
-[; ;I2C_MASTER.c: 21: unsigned char Word[]="I2C";
-[v _Word `uc ~T0 @X0 -> 4 `i e ]
-[i _Word
-:U ..
--> 73 `c
--> 50 `c
--> 67 `c
--> 0 `c
-..
-]
-"23
-[; ;I2C_MASTER.c: 23: unsigned char result[3];
-[v _result `uc ~T0 @X0 -> 3 `i e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"25
-[; ;I2C_MASTER.c: 25: void main(){
-[v _main `(v ~T0 @X0 1 ef ]
+"4 LCD.c
+[; ;LCD.c: 4: void Lcd_Configuration()
+[v _Lcd_Configuration `(v ~T0 @X0 1 ef ]
+"5
+[; ;LCD.c: 5: {
 {
-[e :U _main ]
+[e :U _Lcd_Configuration ]
 [f ]
-"29
-[; ;I2C_MASTER.c: 29:     Lcd_Configuration();
-[e ( _Lcd_Configuration ..  ]
-"31
-[; ;I2C_MASTER.c: 31:     Lcd_Cmd(0x80);
-[e ( _Lcd_Cmd (1 -> -> 128 `i `uc ]
-"33
-[; ;I2C_MASTER.c: 33:     Lcd_Print(Read);
-[e ( _Lcd_Print (1 &U _Read ]
-"36
-[; ;I2C_MASTER.c: 36:     Lcd_Cmd(0xC0);
-[e ( _Lcd_Cmd (1 -> -> 192 `i `uc ]
-"38
-[; ;I2C_MASTER.c: 38:     Lcd_Print(Write);
-[e ( _Lcd_Print (1 &U _Write ]
-"43
-[; ;I2C_MASTER.c: 43:     I2C_Master_Init();
-[e ( _I2C_Master_Init ..  ]
-"47
-[; ;I2C_MASTER.c: 47:     Lcd_Cmd(0x80+6);
-[e ( _Lcd_Cmd (1 -> + -> 128 `i -> 6 `i `uc ]
-"49
-[; ;I2C_MASTER.c: 49:     Lcd_Print(Word);
-[e ( _Lcd_Print (1 &U _Word ]
-"51
-[; ;I2C_MASTER.c: 51:     I2C_Start();
-[e ( _I2C_Start ..  ]
-"53
-[; ;I2C_MASTER.c: 53:     I2C_Page_Write(Word,0xA0,0x0020);
-[e ( _I2C_Page_Write (3 , , &U _Word -> -> 160 `i `uc -> -> 32 `i `uc ]
-"57
-[; ;I2C_MASTER.c: 57:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
-"59
-[; ;I2C_MASTER.c: 59:     _delay((unsigned long)((100)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"63
-[; ;I2C_MASTER.c: 63:     I2C_Start();
-[e ( _I2C_Start ..  ]
-"65
-[; ;I2C_MASTER.c: 65:     I2C_Page_Read(result,3 -1,0xA0,0x0020);
-[e ( _I2C_Page_Read (4 , , , &U _result - -> 3 `i -> 1 `i -> -> 160 `i `uc -> -> 32 `i `uc ]
-"69
-[; ;I2C_MASTER.c: 69:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
-"71
-[; ;I2C_MASTER.c: 71:     Lcd_Cmd(0xC6);
-[e ( _Lcd_Cmd (1 -> -> 198 `i `uc ]
-"75
-[; ;I2C_MASTER.c: 75:     Lcd_Print(result);
-[e ( _Lcd_Print (1 &U _result ]
-"78
-[; ;I2C_MASTER.c: 78:     while(1);
-[e :U 97 ]
-[e :U 96 ]
-[e $U 97  ]
-[e :U 98 ]
-"80
-[; ;I2C_MASTER.c: 80: }
+"6
+[; ;LCD.c: 6:     TRISD=0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"8
+[; ;LCD.c: 8:     PORTD=0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"10
+[; ;LCD.c: 10:     TRISC=(TRISC&0x3F);
+[e = _TRISC -> & -> _TRISC `i -> 63 `i `uc ]
+"13
+[; ;LCD.c: 13: }
 [e :UE 95 ]
+}
+"15
+[; ;LCD.c: 15: void Lcd_Data(unsigned char data) {
+[v _Lcd_Data `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _Lcd_Data ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"19
+[; ;LCD.c: 19:     PORTD = data;
+[e = _PORTD _data ]
+"21
+[; ;LCD.c: 21:     PORTC |= 0x40;
+[e =| _PORTC -> -> 64 `i `Vuc ]
+"23
+[; ;LCD.c: 23:     PORTC |= 0x80;
+[e =| _PORTC -> -> 128 `i `Vuc ]
+"25
+[; ;LCD.c: 25:     PORTC &= ~0x80;
+[e =& _PORTC -> ~ -> 128 `i `Vuc ]
+"27
+[; ;LCD.c: 27:     _delay((unsigned long)((10)*(12000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 12000000 `l `d .4000.0 `ul ]
+"30
+[; ;LCD.c: 30: }
+[e :UE 96 ]
+}
+"32
+[; ;LCD.c: 32: void Lcd_Cmd(unsigned char cmd) {
+[v _Lcd_Cmd `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _Lcd_Cmd ]
+[v _cmd `uc ~T0 @X0 1 r1 ]
+[f ]
+"34
+[; ;LCD.c: 34:     PORTD = cmd;
+[e = _PORTD _cmd ]
+"36
+[; ;LCD.c: 36:     PORTC &= ~0x40;
+[e =& _PORTC -> ~ -> 64 `i `Vuc ]
+"39
+[; ;LCD.c: 39:     PORTC |= 0x80;
+[e =| _PORTC -> -> 128 `i `Vuc ]
+"41
+[; ;LCD.c: 41:     PORTC &= ~0x80;
+[e =& _PORTC -> ~ -> 128 `i `Vuc ]
+"43
+[; ;LCD.c: 43:     _delay((unsigned long)((10)*(12000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 12000000 `l `d .4000.0 `ul ]
+"46
+[; ;LCD.c: 46: }
+[e :UE 97 ]
 }

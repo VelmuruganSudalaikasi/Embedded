@@ -1,5 +1,5 @@
 //This is implementation of I2C Read and write to EEPROM
-
+#include<xc.h>
 #define _XTAL_FREQ 16000000     //Clock Frequency
 
 #include "Config.h"            //Includes the Configuration bits
@@ -30,11 +30,13 @@ void main(){
     
     Lcd_Cmd(0x80);                  //Pointing row->0,col->0
     
-    Lcd_Print(Read);                //Iterate Read array characters and displaying in LCD
+    Lcd_Print(Read);                //Iterate Read array characters and 
+                                         // displaying in LCD
     
     Lcd_Cmd(0xC0);                  //Pointing row->1,col->0
     
-    Lcd_Print(Write);               //Iterate the Characters and displaying in LCD
+    Lcd_Print(Write);               //Iterate the Characters and 
+                                                  //displaying in LCD
     
     //I2C configuration
     
@@ -46,11 +48,13 @@ void main(){
     
     Lcd_Print(Word);              //Printing the Character on LCD
     
-    I2C_Start();                 //Initiate the I2C Communication by SDL low while SCL high
+    I2C_Start();      //Initiate the I2C Communication by SDL low while SCL high
     
-    I2C_Page_Write(Word,Device_add,Reg_add);  //Page write function Write the content which inside the Word array location of Device and Reg address
+    I2C_Page_Write(Word,Device_add,Reg_add);  //Page write function Write the 
     
-    I2C_Stop();                    //Terminate the I2C by SDL low->high while SCL is high                                 
+        //content which inside the Word array location of Device and Reg address
+    
+    I2C_Stop();          //Terminate the I2C by SDL low->high while SCL is high                                 
     
     __delay_ms(100);           
     
@@ -58,7 +62,9 @@ void main(){
     
     I2C_Start();                         //Initiate the Communication 
     
-    I2C_Page_Read(result,READ_BYTE_SIZE-1,Device_add,Reg_add);  //Used to Read the contents in the Device_add of Reg_Add
+    I2C_Page_Read(result,READ_BYTE_SIZE-1,Device_add,Reg_add);  //Used to
+    
+                           // Read the contents in the Device_add of Reg_Add
     
     I2C_Stop();                             //Terminate the Connection
     
@@ -66,7 +72,8 @@ void main(){
    
     //Printing to the LCD
     
-    Lcd_Print(result);                    //Printing the Result with the help of LCD
+    Lcd_Print(result);                    //Printing the Result with the help 
+                                                // of LCD
     
     while(1);
 

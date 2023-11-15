@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\dat\20230322214319_en.msgs \
   -cn -h+dist/default/production\MASTER.X.production.sym \
   --cmf=dist/default/production\MASTER.X.production.cmf -z -Q16F877A \
-  -oC:\Users\velmu\AppData\Local\Temp\xcCs35s.2\driver_tmp_3.o \
+  -oC:\Users\velmu\AppData\Local\Temp\xcAs8gs.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/MASTER.X.production.map \
-  --md=C:\Users\velmu\AppData\Local\Temp\xcCs35s.2\driver_tmp_0.dat -E1 \
+  --md=C:\Users\velmu\AppData\Local\Temp\xcAs8gs.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
@@ -22,7 +22,7 @@ Linker command line:
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -k \
-  C:\Users\velmu\AppData\Local\Temp\xcCs35s.2\driver_tmp_12.o \
+  C:\Users\velmu\AppData\Local\Temp\xcAs8gs.\driver_tmp_12.o \
   dist/default/production\MASTER.X.production.o 
 
 Object code version is 3.11
@@ -32,7 +32,7 @@ Machine type is 16F877A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\velmu\AppData\Local\Temp\xcCs35s.2\driver_tmp_12.o
+C:\Users\velmu\AppData\Local\Temp\xcAs8gs.\driver_tmp_12.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        1        0       4
 dist/default/production\MASTER.X.production.o
@@ -385,25 +385,7 @@ wtemp0                     (abs)        007E
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-./LCD.h
-		_Lcd_Configuration		CODE           	06B6	0000	87
-		_Lcd_Cmd       		CODE           	0616	0000	24
-		_Lcd_Data      		CODE           	05EA	0000	21
-		_Lcd_Print     		CODE           	05FF	0000	23
-
-./LCD.h estimated size: 155
-
-shared
-		__initialization		CODE           	07EA	0000	18
-
-shared estimated size: 18
-
-I2C_MASTER.c
-		_main          		CODE           	0771	0000	121
-
-I2C_MASTER.c estimated size: 121
-
-./I2C.h
+I2C.c
 		_I2C_Repeat_Start		CODE           	0577	0000	9
 		_I2C_Page_Read 		CODE           	070D	0000	100
 		_I2C_Page_Write		CODE           	0677	0000	63
@@ -416,5 +398,23 @@ I2C_MASTER.c estimated size: 121
 		_I2C_NACK      		CODE           	059E	0000	12
 		_I2C_Start     		CODE           	0580	0000	9
 
-./I2C.h estimated size: 315
+I2C.c estimated size: 315
+
+shared
+		__initialization		CODE           	07EA	0000	18
+
+shared estimated size: 18
+
+I2C_MASTER.c
+		_main          		CODE           	0771	0000	121
+
+I2C_MASTER.c estimated size: 121
+
+LCD.c
+		_Lcd_Configuration		CODE           	06B6	0000	87
+		_Lcd_Cmd       		CODE           	0616	0000	24
+		_Lcd_Data      		CODE           	05EA	0000	21
+		_Lcd_Print     		CODE           	05FF	0000	23
+
+LCD.c estimated size: 155
 

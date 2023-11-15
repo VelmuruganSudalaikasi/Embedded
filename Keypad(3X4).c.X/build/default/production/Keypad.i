@@ -1871,55 +1871,12 @@ extern __bank0 __bit __timeout;
 
 
 # 1 "./LCD.h" 1
-# 38 "./LCD.h"
+# 35 "./LCD.h"
 void Lcd_Data(unsigned char);
 
 void Lcd_Cmd(unsigned char);
 
 void Lcd_Configuration(void);
-
-void Lcd_Configuration()
-{
-    TRISD=0x00;
-
-    PORTD=0x00;
-
-    TRISC=(TRISC&0x3F);
-
-
-}
-
-void Lcd_Data(unsigned char data) {
-
-
-
-    PORTD = data;
-
-    PORTC |= 0x40;
-
-    PORTC |= 0x80;
-
-    PORTC &= ~0x80;
-
-    _delay((unsigned long)((10)*(12000000/4000.0)));
-
-
-}
-
-void Lcd_Cmd(unsigned char cmd) {
-
-    PORTD = cmd;
-
-    PORTC &= ~0x40;
-
-
-    PORTC |= 0x80;
-
-    PORTC &= ~0x80;
-
-    _delay((unsigned long)((10)*(12000000/4000.0)));
-
-}
 # 27 "Keypad.c" 2
 
 
@@ -1928,6 +1885,8 @@ void Lcd_Cmd(unsigned char cmd) {
 void Configuration(void);
 
 void Keypad_Scanning(void);
+
+void Standard_Scanning(void);
 
 unsigned char result[] = ":PRESSED";
 
@@ -1983,6 +1942,7 @@ void Configuration(void) {
 
     for (char i = 0; i < 9; i++) {
 
+
         Lcd_Data(result[i]);
 
     }
@@ -1993,6 +1953,8 @@ void Configuration(void) {
 void Keypad_Scanning(void) {
 
     RB2 = 1, RB0 =RB1 = 0;
+
+
 
     Lcd_Cmd(0x80);
 
@@ -2044,6 +2006,7 @@ void Keypad_Scanning(void) {
  }
 
     RB0 = 1, RB2 = RB1 = 0;
+
 
     temp = PORTB;
 

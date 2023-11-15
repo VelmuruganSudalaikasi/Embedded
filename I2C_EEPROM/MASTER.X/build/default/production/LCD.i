@@ -1,4 +1,4 @@
-# 1 "I2C_MASTER.c"
+# 1 "LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "I2C_MASTER.c" 2
-
+# 1 "LCD.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1854,153 +1853,86 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\\pic\\include\\xc.h" 2 3
-# 2 "I2C_MASTER.c" 2
+# 1 "LCD.c" 2
 
 
 
-# 1 "./Config.h" 1
-# 39 "./Config.h"
-#pragma config FOSC = EXTRC
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config BOREN = OFF
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-#pragma config WRT = OFF
-#pragma config CP = OFF
-# 5 "I2C_MASTER.c" 2
 
 
-# 1 "./I2C.h" 1
-# 40 "./I2C.h"
-void I2C_Start(void);
 
-void I2C_Wait(void);
+void Lcd_Data(unsigned char data) {
 
-void I2C_Stop(void);
 
-void I2C_ACK(void);
 
-void I2C_Repeat_Start(void);
+    PORTD = data;
 
-int I2C_Write_Data(unsigned char);
+    PORTC |= 0x40;
 
-void I2C_NACK(void);
+    PORTC |= 0x80;
 
-void I2C_Master_Init(void);
+    PORTC &= ~0x80;
 
-unsigned char I2C_Read_Data(int );
+    _delay((unsigned long)((10)*(16000000/4000.0)));
 
-void I2C_Page_Read(unsigned char*,int,unsigned char ,unsigned char );
-
-
- void I2C_Page_Write(unsigned char *,unsigned char ,unsigned char );
-# 75 "./I2C.h"
-void I2C_Start(void);
-
-void I2C_Wait(void);
-
-void I2C_Stop(void);
-
-void I2C_Master_RCEN(void);
-
-void I2C_ACK(void);
-
-void I2C_Repeat_Start(void);
-
-int I2C_Write_Data(unsigned char);
-
-void I2C_NACK(void);
-
-void I2C_Master_Init(void);
-
-unsigned char I2C_Read_Data(int );
-
-void I2C_Page_Read(unsigned char*,int,unsigned char ,unsigned char );
-
- void I2C_Page_Write(unsigned char *,unsigned char ,unsigned char );
-# 7 "I2C_MASTER.c" 2
-
-
-# 1 "./LCD.h" 1
-# 35 "./LCD.h"
-void Lcd_Data(unsigned char);
-
-void Lcd_Cmd(unsigned char);
-
-void Lcd_Configuration(void);
-
-void Lcd_Print(unsigned char*);
-# 9 "I2C_MASTER.c" 2
-
-
-
-
-
-
-
-
-unsigned char Read[]="READ:";
-
-unsigned char Write[]="Write:";
-
-unsigned char Word[]="I2C";
-
-unsigned char result[3];
-
-void main(){
-
-
-
-    Lcd_Configuration();
-
-    Lcd_Cmd(0x80);
-
-    Lcd_Print(Read);
-
-
-    Lcd_Cmd(0xC0);
-
-    Lcd_Print(Write);
-
-
-
-
-    I2C_Master_Init();
-
-
-
-    Lcd_Cmd(0x80+6);
-
-    Lcd_Print(Word);
-
-    I2C_Start();
-
-    I2C_Page_Write(Word,0xA0,0x0020);
-
-
-
-    I2C_Stop();
-
-    _delay((unsigned long)((100)*(16000000/4000.0)));
-
-
-
-    I2C_Start();
-
-    I2C_Page_Read(result,3 -1,0xA0,0x0020);
-
-
-
-    I2C_Stop();
-
-    Lcd_Cmd(0xC6);
-
-
-
-    Lcd_Print(result);
-
-
-    while(1);
 
 }
+
+
+
+void Lcd_Cmd(unsigned char cmd) {
+
+    PORTD = cmd;
+
+    PORTC &= ~0x40;
+
+
+    PORTC |= 0x80;
+
+    PORTC &= ~0x80;
+
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+
+}
+
+
+void Lcd_Print(unsigned char* x){
+
+    while(*x){
+        Lcd_Data(*x);
+        x++;
+    }
+}
+
+
+
+void Lcd_Configuration()
+{
+    TRISD=0x00;
+
+    PORTD=0x00;
+
+    TRISC=(TRISC&0x3F);
+
+
+    Lcd_Cmd(0x0C);
+
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+
+    Lcd_Cmd(0x01);
+
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+
+    Lcd_Cmd(0x38);
+
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+
+    Lcd_Cmd(0x06);
+
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+
+    Lcd_Cmd(0x81);
+
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+
+
+ }

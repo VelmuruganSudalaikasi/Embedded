@@ -16,6 +16,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>I2C_MASTER.c</itemPath>
+      <itemPath>LCD.c</itemPath>
+      <itemPath>I2C.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
